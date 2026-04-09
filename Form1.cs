@@ -5,10 +5,20 @@ namespace BurgerKiosk
         public Form1()
         {
             InitializeComponent();
+            rdoHamBurger.Checked = false;
+            rdoBulgogiBurger.Checked = false;
+            rdoChickenBurger.Checked = false;
+
+
+            chkPotato.Checked = false;
+            chkCola.Checked = false;
+            chkCheeze.Checked = false;
+            chkSauce.Checked = false;
+            MessageBox.Visible = false;
         }
 
-       
-        
+
+
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
@@ -23,7 +33,7 @@ namespace BurgerKiosk
 
         private void radioButton1_CheckedChanged_1(object sender, EventArgs e)
         {
-           
+
         }
 
         private void btnReset_Click(object sender, EventArgs e)
@@ -38,7 +48,7 @@ namespace BurgerKiosk
             chkSauce.Checked = false;
 
             lstOrder.Items.Clear();
-            lblTotalCost.Text = "";
+            lblTotalCost.Text = "총 금액: 0원";
         }
 
         private void rdoHamBurger_CheckedChanged(object sender, EventArgs e)
@@ -48,18 +58,22 @@ namespace BurgerKiosk
 
         private void BtnOrder_Click(object sender, EventArgs e)
         {
+
             int totalCost = 0;
             lstOrder.Items.Clear();
+            
+
+            MessageBox.Visible = false;
 
             // 메뉴 선택 안 했을 때
             if (!rdoHamBurger.Checked && !rdoBulgogiBurger.Checked && !rdoChickenBurger.Checked)
             {
-                lblTotalCost.Text = "메뉴를 선택하세요";
+                MessageBox.Visible = true;  
                 return;
             }
-
-            // 메뉴
-            if (rdoHamBurger.Checked)
+  
+                // 메뉴
+                if (rdoHamBurger.Checked)
             {
                 totalCost += 5000;
                 lstOrder.Items.Add("햄버거 5000원");
@@ -110,27 +124,37 @@ namespace BurgerKiosk
 
         private void rdoBulgogiBurger_CheckedChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void rdoChickenBurger_CheckedChanged(object sender, EventArgs e)
         {
-            
+
         }
 
         private void chkCola_CheckedChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void chkCheeze_CheckedChanged(object sender, EventArgs e)
         {
-           
+
         }
 
         private void chkSauce_CheckedChanged(object sender, EventArgs e)
         {
-          
+
+        }
+
+        private void Form1_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void MessageBox_Click(object sender, EventArgs e)
+        {
+            
         }
     }
 }

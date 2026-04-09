@@ -47,6 +47,9 @@
             BtnOrder = new Button();
             lblTotalCost = new Label();
             lstOrder = new ListBox();
+            lblMessage = new Label();
+            label1 = new Label();
+            MessageBox = new Label();
             grpMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
@@ -81,7 +84,6 @@
             rdoChickenBurger.Name = "rdoChickenBurger";
             rdoChickenBurger.Size = new Size(205, 55);
             rdoChickenBurger.TabIndex = 8;
-            rdoChickenBurger.TabStop = true;
             rdoChickenBurger.Text = "치킨버거";
             rdoChickenBurger.UseVisualStyleBackColor = true;
             rdoChickenBurger.CheckedChanged += rdoChickenBurger_CheckedChanged;
@@ -121,7 +123,6 @@
             rdoHamBurger.Name = "rdoHamBurger";
             rdoHamBurger.Size = new Size(167, 55);
             rdoHamBurger.TabIndex = 3;
-            rdoHamBurger.TabStop = true;
             rdoHamBurger.Text = "햄버거";
             rdoHamBurger.UseVisualStyleBackColor = true;
             rdoHamBurger.CheckedChanged += rdoHamBurger_CheckedChanged;
@@ -134,7 +135,6 @@
             rdoBulgogiBurger.Name = "rdoBulgogiBurger";
             rdoBulgogiBurger.Size = new Size(243, 55);
             rdoBulgogiBurger.TabIndex = 1;
-            rdoBulgogiBurger.TabStop = true;
             rdoBulgogiBurger.Text = "불고기버거";
             rdoBulgogiBurger.UseVisualStyleBackColor = true;
             rdoBulgogiBurger.CheckedChanged += rdoBulgogiBurger_CheckedChanged;
@@ -158,7 +158,6 @@
             chkPotato.Name = "chkPotato";
             chkPotato.Size = new Size(205, 55);
             chkPotato.TabIndex = 4;
-            chkPotato.TabStop = true;
             chkPotato.Text = "감자튀김";
             chkPotato.UseVisualStyleBackColor = true;
             chkPotato.CheckedChanged += radioButton1_CheckedChanged_1;
@@ -171,7 +170,6 @@
             chkCola.Name = "chkCola";
             chkCola.Size = new Size(129, 55);
             chkCola.TabIndex = 5;
-            chkCola.TabStop = true;
             chkCola.Text = "콜라";
             chkCola.UseVisualStyleBackColor = true;
             chkCola.CheckedChanged += chkCola_CheckedChanged;
@@ -184,7 +182,6 @@
             chkCheeze.Name = "chkCheeze";
             chkCheeze.Size = new Size(218, 55);
             chkCheeze.TabIndex = 6;
-            chkCheeze.TabStop = true;
             chkCheeze.Text = "치즈 추가";
             chkCheeze.UseVisualStyleBackColor = true;
             chkCheeze.CheckedChanged += chkCheeze_CheckedChanged;
@@ -197,7 +194,6 @@
             chkSauce.Name = "chkSauce";
             chkSauce.Size = new Size(218, 55);
             chkSauce.TabIndex = 7;
-            chkSauce.TabStop = true;
             chkSauce.Text = "소스 추가";
             chkSauce.UseVisualStyleBackColor = true;
             chkSauce.CheckedChanged += chkSauce_CheckedChanged;
@@ -279,17 +275,49 @@
             lstOrder.TabIndex = 9;
             lstOrder.SelectedIndexChanged += lstOrder_SelectedIndexChanged;
             // 
+            // lblMessage
+            // 
+            lblMessage.AutoSize = true;
+            lblMessage.ForeColor = Color.Red;
+            lblMessage.Location = new Point(36, 747);
+            lblMessage.Name = "lblMessage";
+            lblMessage.Size = new Size(0, 32);
+            lblMessage.TabIndex = 8;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(41, 754);
+            label1.Name = "label1";
+            label1.Size = new Size(0, 32);
+            label1.TabIndex = 9;
+            // 
+            // MessageBox
+            // 
+            MessageBox.AutoSize = true;
+            MessageBox.ForeColor = Color.Red;
+            MessageBox.Location = new Point(959, 747);
+            MessageBox.Name = "MessageBox";
+            MessageBox.Size = new Size(238, 32);
+            MessageBox.TabIndex = 10;
+            MessageBox.Text = "메뉴를 선택해주세요";
+            MessageBox.Click += MessageBox_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(14F, 32F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1337, 807);
+            Controls.Add(MessageBox);
+            Controls.Add(label1);
+            Controls.Add(lblMessage);
             Controls.Add(grpOrder);
             Controls.Add(grpOption);
             Controls.Add(lblTitle);
             Controls.Add(grpMenu);
             Name = "Form1";
             Text = "Form1";
+            Load += Form1_Load;
             grpMenu.ResumeLayout(false);
             grpMenu.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox3).EndInit();
@@ -322,5 +350,8 @@
         private Button btnReset;
         private Button BtnOrder;
         private RadioButton rdoChickenBurger;
+        private Label lblMessage;
+        private Label label1;
+        private Label MessageBox;
     }
 }
