@@ -76,45 +76,45 @@ namespace BurgerKiosk
                 if (rdoHamBurger.Checked)
             {
                 totalCost += 5000;
-                lstOrder.Items.Add("햄버거 5000원");
+                lstOrder.Items.Add("햄버거 " + 5000.ToString("N0") + "원");
             }
             else if (rdoBulgogiBurger.Checked)
             {
                 totalCost += 4000;
-                lstOrder.Items.Add("불고기버거 4000원");
+                lstOrder.Items.Add("불고기버거 " + 4000.ToString("N0") + "원");
             }
             else if (rdoChickenBurger.Checked)
             {
                 totalCost += 3000;
-                lstOrder.Items.Add("치킨버거 3000원");
+                lstOrder.Items.Add("치킨버거 " + 3000.ToString("N0") + "원");
             }
 
             // 옵션
             if (chkPotato.Checked)
             {
                 totalCost += 3500;
-                lstOrder.Items.Add("감자튀김 3500원");
+                lstOrder.Items.Add("감자튀김 " + 3500.ToString("N0") + "원");
             }
 
             if (chkCola.Checked)
             {
                 totalCost += 2500;
-                lstOrder.Items.Add("콜라 2500원");
+                lstOrder.Items.Add("콜라 " + 2500.ToString("N0") + "원");
             }
 
             if (chkCheeze.Checked)
             {
                 totalCost += 1500;
-                lstOrder.Items.Add("치즈 1500원");
+                lstOrder.Items.Add("치즈 추가 " + 1500.ToString("N0") + "원");
             }
 
             if (chkSauce.Checked)
             {
                 totalCost += 500;
-                lstOrder.Items.Add("소스 500원");
+                lstOrder.Items.Add("소스 " + 500.ToString("N0") + "원");
             }
 
-            lblTotalCost.Text = "총 금액: " + totalCost + "원";
+            lblTotalCost.Text = "총 금액: " + totalCost.ToString("N0") + "원";
         }
 
         private void lstOrder_SelectedIndexChanged(object sender, EventArgs e)
